@@ -20,6 +20,9 @@ menu:
   archives:
     text: 归档
     url: /archives
+  calendar:
+    text: 写作计划
+    url: /plan
   heart:
     text: 关于我
     url: /about
