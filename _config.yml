@@ -9,8 +9,11 @@
 #    target: _blank    是否跳出，省略则在当前页面打开
 menu:
   home:
-    text: 主页
+    text: 首页
     url: /
+  book:
+    text: 主题
+    url: /topic
   th-list:
     text: 分类
     url: /categories
@@ -23,7 +26,7 @@ menu:
   calendar:
     text: 写作计划
     url: /plan
-  heart:
+  user:
     text: 关于我
     url: /about
   github:
