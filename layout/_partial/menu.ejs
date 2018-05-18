@@ -28,6 +28,9 @@
               <a href="<%- url_for(menuItem.url) %>" <% if(menuItem.target){ %>target="_blank"<% } %> >
                 <i class="icon icon-lg icon-<%= i %>"></i>
                 <%=(menuItem.text || _.startCase(i)) %>
+                <% if(menuItem.text=="归档"){ %>(<%=(site.posts.length) %>)<% } %>
+                <% if(menuItem.text=="分类"){ %>(<%=(site.categories.length) %>)<% } %>
+                <% if(menuItem.text=="标签"){ %>(<%=(site.tags.length) %>)<% } %>
               </a>
             </li>
         <% } %>
