@@ -441,13 +441,9 @@
                 }
 
                 if( el.classList.contains("postImg") ){
-                    el.src = "/images" + el.getAttribute("src");
-
                     var imgId = getId();
                     var html = el.outerHTML;
-                    var html = '<div class="img-lightbox" id="'+imgId+'" style=""><div class="overlay">'+html+'</div></div>';
-
-                    el.outerHTML = html;
+                    el.outerHTML = '<div class="img-lightbox" id="'+imgId+'" style=""><div class="overlay"></div>'+html+'</div>';
                     el = document.getElementById(imgId);
                 }
                 new LightBox(el);
