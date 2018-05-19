@@ -433,17 +433,20 @@
 
             forEach.call($$('.lightImg'), function (el) {
                 function getId(){
-                    var imgId = "light-"+(new Date().getTime())+"-"+(Math.floor(Math.random()*1000));
+                    var imgId = "light-"+(Math.floor(Math.random()*10000));
                     if(document.getElementById(imgId)){
                         return getId();
                     }
                     return imgId;
                 }
 
-                var html = el.outerHTML;
-                if(html.indexOf("overlay") === -1){
+                if( el.classList.contains("postImg") ){
+                    el.src = "/images" + el.getAttribute("src");
+
                     var imgId = getId();
-                    html = '<div class="img-lightbox" id="'+imgId+'" style=""><div class="overlay"></div>'+html+'</div>';
+                    var html = el.outerHTML;
+                    var html = '<div class="img-lightbox" id="'+imgId+'" style=""><div class="overlay">'+html+'</div></div>';
+
                     el.outerHTML = html;
                     el = document.getElementById(imgId);
                 }
