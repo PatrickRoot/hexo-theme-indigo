@@ -431,8 +431,23 @@
                 })
             }
 
-            forEach.call($$('.img-lightbox'), function (el) {
-                new LightBox(el)
+            forEach.call($$('.lightImg'), function (el) {
+                function getId(){
+                    var imgId = "light-"+(new Date().getTime())+"-"+(Math.floor(Math.random()*1000));
+                    if(document.getElementById(imgId)){
+                        return getId();
+                    }
+                    return imgId;
+                }
+
+                var html = el.outerHTML;
+                if(html.indexOf("overlay") === -1){
+                    var imgId = getId();
+                    html = '<div class="img-lightbox" id="'+imgId+'" style=""><div class="overlay"></div>'+html+'</div>';
+                    el.outerHTML = html;
+                    el = document.getElementById(imgId);
+                }
+                new LightBox(el);
             })
         })(),
         loadScript: function (scripts) {
