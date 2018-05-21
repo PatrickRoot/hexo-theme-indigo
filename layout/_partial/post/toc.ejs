@@ -1,7 +1,7 @@
 <% if(theme.toc){
     var topic = toc(post.content, {
             class: 'post-toc',
-            list_number: theme.toc.list_number
+            list_number: theme.toc.list_number&&post.tocnum
         })
     if(topic) {
 %>
