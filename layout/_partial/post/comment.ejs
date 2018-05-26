@@ -1,12 +1,25 @@
 <% if(post.comments){ %>
 
-<%- partial('../plugins/disqus') %>
-
-<%- partial('../plugins/uyan') %>
-
-<%- partial('../plugins/gitment') %>
-
-<%- partial('../plugins/valine') %>
-
-<%- partial('../plugins/hyper-comments') %>
+    <section class="comments" id="comments">
+        <!-- <script type="text/javascript" src="https://api.sixlab.cn/static/js/hexo/comments.js"></script> -->
+        <script type="text/javascript" src="http://localhost:18080/static/js/hexo/comments.js"></script>
+        <script type="text/javascript">
+            var path = '<%- post.source %>';
+            var start = path.lastIndexOf('/') + 1;
+            var end = path.lastIndexOf('.md');
+            path = path.substring(start, end);
+            MbxComment(path, '<%- theme.MBX_TOKEN %>', 'comments    ');
+        </script>
+    </section>
+    
+    <%- //partial('../plugins/disqus') %>
+    
+    <%- //partial('../plugins/uyan') %>
+    
+    <%- //partial('../plugins/gitment') %>
+    
+    <%- //partial('../plugins/valine') %>
+    
+    <%- //partial('../plugins/hyper-comments') %>
+    
 <%} %>

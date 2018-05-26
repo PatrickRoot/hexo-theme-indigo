@@ -170,6 +170,8 @@ title_change:
   normal: 停止呼唤中...
   leave: 来自六楼实验室的呼唤
 
+MBX_TOKEN: TLBDA5GNEYMUZZT038PSVRV5LIL5HMJ8
+
 # 设置为 true 发布后将使用 unpkg cdn 最新的主题样式
 # 如果想让你的自定义样式生效，把此项设为 false
 cdn: false
@@ -178,4 +180,4 @@ cdn: false
 lightbox: true
 
 # icp备案号  ICP_license: 京ICP备1234556号-1
-ICP_license: false
+ICP_license: 豫ICP备15033629号
